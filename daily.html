@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const input = prompt("Entrez une liste de mots séparés par des virgules :");
+
+
+const words = input.split(",").map(word => word.trim());
+
+
+const maxLength = Math.max(...words.map(word => word.length));
+
+
+const horizontalBorder = "*".repeat(maxLength + 4);
+const verticalBorder = "*";
+const emptyLine = "" + " ".repeat(maxLength + 2) + "";
+const contentLines = words.map(word => "* " + word.padEnd(maxLength, " ") + " *");
+
+
+console.log(horizontalBorder);
+console.log(verticalBorder + " " + " ".repeat(maxLength) + " " + verticalBorder);
+contentLines.forEach(line => console.log(line));
+console.log(emptyLine);
+console.log(horizontalBorder);
+    </script>
+</body>
+</html>
