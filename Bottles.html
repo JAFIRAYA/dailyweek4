@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function bottlesOfBeer(num) {
+        for (var i = num; i >= 0; i--) {
+          var currentBottles = i;
+          var nextBottles = i - 1;
+          
+          var bottlesText = currentBottles === 1 ? "bottle" : "bottles";
+          var nextBottlesText = nextBottles === 1 ? "bottle" : "bottles";
+          
+          var takeDownText = currentBottles === 1 ? "Take it down" : "Take " + currentBottles + " down";
+          var passAroundText = currentBottles === 2 ? "pass it around" : "pass them around";
+          
+          console.log(currentBottles + " " + bottlesText + " of beer on the wall");
+          console.log(currentBottles + " " + bottlesText + " of beer");
+          console.log(takeDownText + ", " + passAroundText);
+          
+          if (nextBottles === 0) {
+            console.log("No more bottles of beer on the wall\n");
+          } else {
+            console.log(nextBottles + " " + nextBottlesText + " of beer on the wall\n");
+          }
+        }
+      }
+      
+      var numBottles = prompt("Enter the number of bottles to start counting down:");
+      bottlesOfBeer(Number(numBottles));
+    </script>
+</body>
+</html>
